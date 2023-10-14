@@ -11,12 +11,13 @@ export function PostList({ posts }: PostListProps): JSX.Element {
 
   return (
     <List
+      className="post-list-wrapper"
       itemLayout="horizontal"
       dataSource={posts}
       renderItem={(item) => (
         <List.Item className="trunc">
           <List.Item.Meta
-            title={<Link to={`${item.id}`}>{item.id}{') '}{item.title}</Link>}
+            title={<Link className="post-title" to={item.id.toString()}>{item.id}{') '}{item.title}</Link>}
             description={item.body}
           />
           <Button type="primary" onClick={() => navigate(`${item.id}`)}>Перейти</Button>

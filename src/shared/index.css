@@ -17,6 +17,10 @@ body {
   text-transform: uppercase;
  }
 
+ .post-title {
+   font-size: 1.2rem;
+ }
+
  .App {
   display: flex;
   justify-content: center;
@@ -27,7 +31,7 @@ body {
   flex-direction: column;
   justify-content: center;
   flex: 1;
-  max-width: 1200px;
+  max-width: 1000px;
  }
 
  .spinner-page {
@@ -44,4 +48,8 @@ body {
 
  .page {
   padding: 40px 0 0 0;
+ }
+
+ .post-list-wrapper {
+  height: 100%;
  }

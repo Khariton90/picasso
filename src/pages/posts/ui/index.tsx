@@ -10,7 +10,6 @@ const DEFAULT_LIMIT = 10;
 
 export function PostsPage(): JSX.Element {
   const [currentLimit, setCurrentLimit] = useState(DEFAULT_LIMIT);
-  const [fetching, setFetching] = useState(false);
   const { ref, inView } = useInView({
     threshold: 1.0,
   })
@@ -18,18 +17,10 @@ export function PostsPage(): JSX.Element {
   const { data: posts, isLoading, error } = postApi.useFetchPostsQuery(currentLimit);
 
   useEffect(() => {
-    if (inView) {
-      setFetching(prev => prev = true);
-    }
-  }, [inView, isLoading]);
-
-  useEffect(() => {
-    if (fetching && currentLimit < MAX_LIMIT) {
+    if (inView && currentLimit < MAX_LIMIT) {
       setCurrentLimit((prev) => prev + DEFAULT_LIMIT);
     }
-
-    setFetching(prev => prev = false);
-  }, [currentLimit, fetching])
+  }, [inView, isLoading]);
 
 
   if (isLoading) {
