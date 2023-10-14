@@ -20,7 +20,7 @@ export function PostList({ posts }: PostListProps): JSX.Element {
             title={<Link className="post-title" to={item.id.toString()}>{item.id}{') '}{item.title}</Link>}
             description={item.body}
           />
-          <Button type="primary" onClick={() => navigate(`${item.id}`)}>Перейти</Button>
+          <Button type="primary" onClick={() => navigate(`${item.id}`)}>Просмотр</Button>
         </List.Item>
       )}
     />
