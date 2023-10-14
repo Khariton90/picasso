@@ -18,7 +18,7 @@ export function PostDetails(): JSX.Element {
       <div className="page posts-item-page">
         <h1 style={{ textTransform: "uppercase" }}>{post.title}</h1>
         <p>{post.body}</p>
-        <Button type="primary" onClick={() => navigate("/")}>Вернуться</Button>
+        <Button type="primary" onClick={() => navigate("/picasso")}>Вернуться</Button>
       </div>
     )
   }
@@ -26,7 +26,7 @@ export function PostDetails(): JSX.Element {
   return (
     <div className="page">
       <h1>Не удалось загрузить пост под номером №{id}</h1>
-      <Button type="primary" onClick={() => navigate("/")}>Вернуться</Button>
+      <Button type="primary" onClick={() => navigate("/picasso")}>Вернуться</Button>
     </div>
   )
 
